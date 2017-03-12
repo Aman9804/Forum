@@ -6,12 +6,13 @@ import java.sql.Statement;
 public class StmtUpdate {
 	String sql="";
 	StmtUpdate(String a){
-		sql=a;
+		this.sql=a;
 	}
 	Conn c=new Conn();
 	Connection con=c.Con("forum", "1234");
 	public int update()
-	{int r=0;
+	{
+		int r=0;
 	try {
 		Statement s=con.createStatement();
 		r=s.executeUpdate(sql);
