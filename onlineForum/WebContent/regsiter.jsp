@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<link rel="stylesheet" href="css/semantic.min.css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<script src="js/jquery3.1.1.min.js"></script>
-<script src="js/semantic.min.js"></script>
+<%@include file="nav.jsp" %>
 <div class="ui container" style="margin-top:50px;">
 <form class="ui form" method="post" action="register_submit.jsp" id="form1">
   <h3 class="ui dividing header">Registration Form</h3>
@@ -322,7 +313,7 @@
     <input type="checkbox"  value="on" name="terms">
     <label>Terms & Conditions</label>
   </div></div>
-  <button class="ui button green" tabindex="0" id="register"><i class="user icon"></i>Register</button>
+  <button class="ui button green" tabindex="0" id="register"><i class="add user icon"></i>Register</button>
   <div class="ui error message"></div>
 </form>
 </div>
@@ -441,5 +432,4 @@ function checkEmail(a){
 	});
 }
 </script>
-</body>
-</html>
+<%@include file="footer.jsp" %>
