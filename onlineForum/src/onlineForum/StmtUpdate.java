@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 public class StmtUpdate {
 	String sql="";
-	StmtUpdate(String a){
+	public StmtUpdate(String a){
 		this.sql=a;
 	}
 	Conn c=new Conn();

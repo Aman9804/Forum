@@ -11,7 +11,7 @@
 <script src="js/jquery3.1.1.min.js"></script>
 <script src="js/semantic.min.js"></script>
 <div class="ui container" style="margin-top:50px;">
-<form class="ui form" method="get" action="register_submit.jsp">
+<form class="ui form" method="post" action="register_submit.jsp">
   <h3 class="ui dividing header">Registration Form</h3>
   <div class="field">
     <label>Name</label>
@@ -24,8 +24,9 @@
       </div>
     </div>
   </div>
+  
 
-    
+    <div class="two fields">
     <div class="field">
       <label>Country</label>
       <div class="ui fluid search selection dropdown" id="country">
@@ -278,6 +279,19 @@
   </div>
        </div>
     </div>
+    <div class="field">
+      <label>Gender</label>
+      <div class="ui selection dropdown" id="gender">
+          <input type="hidden" name="gender">
+          <i class="dropdown icon"></i>
+          <div class="default text">Gender</div>
+          <div class="menu">
+              <div class="item" data-value="M">Male</div>
+              <div class="item" data-value="F">Female</div>
+          </div>
+      </div>
+  </div>
+    </div>
     
     <div class="field">
     <label>Email</label>
@@ -315,7 +329,7 @@
 $('#country')
 .dropdown()
 ;
-
+$("#gender").dropdown();
 $('.ui.form')
 .form({
   fields: {
@@ -346,6 +360,16 @@ $('.ui.form')
     		}
     	]
     },
+    gender:{
+    	identifier:'gender',
+    	rules:[
+    		{
+    			type:'empty',
+    			prompt:'Choose a gender'
+    		}
+    	]
+    	
+    },
     email : {
     	identifier:'email',
     	rules:[
@@ -361,14 +385,22 @@ $('.ui.form')
     	identifier:'pass',
     	rules:[
     		{
+                type   : 'empty',
+                prompt : 'Please enter a password'
+               },
+    		{
     		type:'minLength[6]',
-    		prompt:'Please enter a Password'
+    		prompt:'Password must contain 7 Characters'
     		}
     	]
     },
     pass2  : {
     	identifier:'pass2',
     	rules:[
+    		{
+             type   : 'empty',
+             prompt : 'Please re-enter password'
+            },
     		{
     		type:'match[pass]',
     		prompt:'Password do not match'
