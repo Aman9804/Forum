@@ -11,7 +11,7 @@
 <script src="js/jquery3.1.1.min.js"></script>
 <script src="js/semantic.min.js"></script>
 <div class="ui container" style="margin-top:50px;">
-<form class="ui form" method="post" action="register_submit.jsp">
+<form class="ui form" method="post" action="register_submit.jsp" id="form1">
   <h3 class="ui dividing header">Registration Form</h3>
   <div class="field">
     <label>Name</label>
@@ -296,7 +296,8 @@
     <div class="field">
     <label>Email</label>
     
-    <input type="text" name="email" placeholder="Enter your email">
+    <input type="text" name="email" placeholder="Enter your email" onBlur="checkEmail(this.value)" id="email" >
+    <p id="email_er_por"></p>
     </div>
  
  	<div class="field">
@@ -321,7 +322,7 @@
     <input type="checkbox"  value="on" name="terms">
     <label>Terms & Conditions</label>
   </div></div>
-  <button class="ui button green" tabindex="0"><i class="user icon"></i>Register</button>
+  <button class="ui button green" tabindex="0" id="register"><i class="user icon"></i>Register</button>
   <div class="ui error message"></div>
 </form>
 </div>
@@ -419,6 +420,26 @@ $('.ui.form')
   }
 })
 ;
+
+function checkEmail(a){
+	
+	$.post('checkemail.jsp',{
+		email:a
+	},
+	
+			function(data,status){
+		if(data.trim()=="Exists"){
+		$("#email_er_por").html('<span style="color:red">Email Already Exists</span>');
+		$("#register").attr('disabled','disabled');
+		}else if(data.trim()=="valid"){
+			$("#email_er_por").html('<span style="color:green">Email is Valid</span>');
+			$("#register").removeAttr('disabled');
+		}
+		
+		
+		
+	});
+}
 </script>
 </body>
 </html>
