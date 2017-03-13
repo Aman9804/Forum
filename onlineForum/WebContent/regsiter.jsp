@@ -10,9 +10,9 @@
 <body>
 <script src="js/jquery3.1.1.min.js"></script>
 <script src="js/semantic.min.js"></script>
-<div class="ui container">
-<form class="ui form" method="get">
-  <h4 class="ui dividing header">Shipping Information</h4>
+<div class="ui container" style="margin-top:50px;">
+<form class="ui form" method="get" action="register_submit.jsp">
+  <h3 class="ui dividing header">Registration Form</h3>
   <div class="field">
     <label>Name</label>
     <div class="two fields">

@@ -4,12 +4,10 @@ package onlineForum;
 
 public class Test {
 	public static void main(String[] args){
-		String sql="insert into USERS values('aman4841','aman','kazi','in','a@b.com','m')";
-		StmtUpdate s=new StmtUpdate(sql);
-		int i=0;
-		i=s.update();
-		if(i!=0){
-			System.out.println("success");
-		}
+		//int i=(int) Math.round(Math.random()*100000);
+		String i="";
+		i=Toolz.generateUsername("aman");
+			System.out.println(i);
+		
 }
 }
