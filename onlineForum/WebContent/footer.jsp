@@ -1,5 +1,5 @@
 
-<div class="ui inverted vertical footer segment" style="margin-top:30px;">
+<div class="ui inverted vertical footer segment" id="footer">
     <div class="ui center aligned container">
       <div class="ui stackable inverted divided grid">
         <div class="three wide column">
@@ -30,8 +30,8 @@
           </div>
         </div>
         <div class="seven wide column">
-          <h4 class="ui inverted header">LibrosTrading</h4>
-          <p>Exchange book you have for book you want.</p>
+          <h4 class="ui inverted header">OnlineForum</h4>
+          <p>Ask anything you want!</p>
         </div>
       </div>
       <div class="ui inverted section divider"></div>
@@ -43,12 +43,26 @@
         <a class="item" href="#">Privacy Policy</a>
       </div>
     </div>
-
-
+</div>
+<p style="margin:0;padding:0 " id="tracker"></p>
 
 
 
 <!-- End of pusher element -->
 </div>
+<script>
+var pageHeight=$("#tracker").position();
+
+var windowHeight=$(window).height();
+var add=0;
+if(pageHeight.top <windowHeight){
+	add=windowHeight-pageHeight.top;
+}
+add=Math.round(add);
+add=add+30;
+//alert(s);
+$("#footer").css("margin-top",add);
+//alert(add);
+</script>
 </body>
 </html>

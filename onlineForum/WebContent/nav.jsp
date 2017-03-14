@@ -25,7 +25,7 @@
 
 
 
-<div class="ui left demo vertical inverted sidebar labeled icon menu">
+<div class="ui left demo vertical inverted sidebar labeled icon menu ">
   <a class="item">
     <i class="home icon"></i>
     Home
@@ -81,4 +81,6 @@ $('.ui.labeled.icon.sidebar')
 $('.ui.labeled.icon.sidebar')
 .sidebar('hide')
 ;
+
+//$(".ui .sticky").sticky();
 </script>
